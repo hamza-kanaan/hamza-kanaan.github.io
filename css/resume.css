@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Resume v4.0.0-beta.2 (https://startbootstrap.com/template-overviews/resume)
- * Copyright 2013-2017 Start Bootstrap
+ * Copyright 2013-2024 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE)
  */
 body {
@@ -11,7 +11,9 @@ body {
 @media (min-width: 992px) {
   body {
     padding-top: 0;
-    padding-left: 17rem; } }
+    padding-left: 17rem; }
+  .middle-image {
+    display: none !important; } }
 
 h1,
 h2,
