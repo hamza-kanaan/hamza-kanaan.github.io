@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
@@ -30,7 +30,7 @@ gulp.task('sass', function () {
 });
 
 // Minify compiled CSS
-gulp.task('minify-css', gulp.series(['sass']), function () {
+gulp.task('minify-css', function () {
   return gulp.src('css/resume.css')
     .pipe(cleanCSS({
       compatibility: 'ie8'
@@ -62,7 +62,7 @@ gulp.task('minify-js', function () {
 
 // Copy vendor files from /node_modules into /vendor
 // NOTE: requires `npm install` before running!
-gulp.task('copy', function () {
+gulp.task('copy', async function () {
   gulp.src([
     'node_modules/bootstrap/dist/**/*',
     '!**/npm.js',
